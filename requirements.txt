@@ -1,5 +1,7 @@
 PyPDF2
 speake3 
+speake
+py-espeak-ng
 pyttsx3
 gtts
 streamlit
