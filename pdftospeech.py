@@ -1,5 +1,4 @@
 from PyPDF2 import PdfFileReader
-import pyttsx3
 import os
 from gtts import gTTS
 import streamlit as st
