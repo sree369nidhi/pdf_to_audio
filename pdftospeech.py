@@ -6,9 +6,6 @@ import streamlit.components.v1 as components
 
 st.set_page_config(page_title="Research : Audiofy",page_icon="🎶",layout="centered",initial_sidebar_state="auto",)
 
-# speech engine for pyttsx3
-engine = pyttsx3.init()
-
 def pypdf2(py_pdf_file):
 	#py_pdf_file = open(py_pdf_file, 'rb') 
 	# create PDFFileReader object to read the file
