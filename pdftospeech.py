@@ -1,5 +1,4 @@
 from PyPDF2 import PdfFileReader
-from pdfminer.high_level import extract_text
 import pyttsx3
 import os
 from gtts import gTTS
@@ -32,11 +31,6 @@ def pypdf2(py_pdf_file):
 	# join all pages text into single string variable
 	text_temp = " ".join(text_lst)
 	return text + text_temp
-
-def pdfminer(pdf_file):
-	# extract text from pdf
-	text = extract_text(pdf_file)
-	return text
 
 def pyttsx3(text, file_name, gender=1):
 	audio_file = f'{file_name}.mp3'
@@ -89,17 +83,10 @@ uploaded_file = st.file_uploader("Choose a Pdf file", type=["pdf"])
 text = audio_file_name = pdf_engine = audio_engine = None
 
 with st.beta_expander("Settings"):
-	col1, col2 = st.beta_columns(2)
-	with col1:
-		pdf_engine = st.selectbox("Choose PDF Type", ('Text PDF', 'Tabular PDF'))
-	with col2:
-		audio_engine = st.selectbox("Choose Audio Engine", ('pyttsx3 Engine', 'Google gTTs Engine'))
+	audio_engine = st.selectbox("Choose Audio Engine", ('pyttsx3 Engine', 'Google gTTs Engine'))
 
 if uploaded_file is not None:
-	if pdf_engine == "Text PDF":
-		text = pypdf2(uploaded_file)
-	if pdf_engine == "Tabular PDF":
-		text = pdfminer(uploaded_file)
+	text = pypdf2(uploaded_file)
 	if audio_engine == "pyttsx3 Engine":
 		audio_file_name = pyttsx3(text, uploaded_file.name)
 	if audio_engine == "Google gTTs Engine":
