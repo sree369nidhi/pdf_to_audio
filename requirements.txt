@@ -1,6 +1,5 @@
 pypdf2
-pdfminer.six
-pdfminer
+python-espeak
 pyttsx3
 gtts
 streamlit
