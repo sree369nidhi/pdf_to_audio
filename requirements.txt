@@ -1,5 +1,5 @@
 PyPDF2
-python-espeak
+espeak
 pyttsx3
 gtts
 streamlit
