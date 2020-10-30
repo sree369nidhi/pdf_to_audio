@@ -5,7 +5,7 @@ from gtts import gTTS
 import streamlit as st
 import streamlit.components.v1 as components
 
-st.beta_set_page_config(page_title="Research : Audiofy",page_icon="🎶",layout="centered",initial_sidebar_state="auto",)
+st.set_page_config(page_title="Research : Audiofy",page_icon="🎶",layout="centered",initial_sidebar_state="auto",)
 
 # speech engine for pyttsx3
 engine = pyttsx3.init()
