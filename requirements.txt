@@ -1,5 +1,5 @@
 PyPDF2
-espeak
+speake3 
 pyttsx3
 gtts
 streamlit
