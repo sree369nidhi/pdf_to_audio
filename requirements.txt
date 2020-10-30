@@ -1,4 +1,5 @@
 PyPDF2
+libespeak1
 pyttsx3
 gtts
 streamlit
