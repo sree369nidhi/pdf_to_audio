@@ -3,7 +3,6 @@ from pdfminer.high_level import extract_text
 import pyttsx3
 import os
 from gtts import gTTS
-from playsound import playsound
 import streamlit as st
 import streamlit.components.v1 as components
 
@@ -100,7 +99,7 @@ if uploaded_file is not None:
 	if pdf_engine == "Text PDF":
 		text = pypdf2(uploaded_file)
 	if pdf_engine == "Tabular PDF":
-		text = pdfminer(pdf_file)
+		text = pdfminer(uploaded_file)
 	if audio_engine == "pyttsx3 Engine":
 		audio_file_name = pyttsx3(text, uploaded_file.name)
 	if audio_engine == "Google gTTs Engine":
