@@ -1,0 +1,6 @@
+pypdf2
+pdfminer.six
+pdfminer
+pyttsx3
+gtts
+streamlit
