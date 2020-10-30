@@ -32,18 +32,6 @@ def pypdf2(py_pdf_file):
 	text_temp = " ".join(text_lst)
 	return text + text_temp
 
-def pyttsx3(text, file_name, gender=1):
-	audio_file = f'{file_name}.mp3'
-	# obtain voice property
-	voices = engine.getProperty('voices')
-	# voice id 1 is for female and 0 for male
-	engine.setProperty('voice', voices[gender].id)
-	# convert to audio and play
-	#engine.say(text)
-	engine.save_to_file(text, audio_file)
-	engine.runAndWait()
-	return audio_file
-
 def text_to_speech(text, file_name):
 	# create a speech objeect
     speech = gTTS(text = text, slow = False)
@@ -80,17 +68,11 @@ st.markdown("<h2 style='text-align: center ; color: black;'><strong>by M. Sreeni
 
 uploaded_file = st.file_uploader("Choose a Pdf file", type=["pdf"])
 
-text = audio_file_name = pdf_engine = audio_engine = None
-
-with st.beta_expander("Settings"):
-	audio_engine = st.selectbox("Choose Audio Engine", ('pyttsx3 Engine', 'Google gTTs Engine'))
+text = audio_file_name = None
 
 if uploaded_file is not None:
 	text = pypdf2(uploaded_file)
-	if audio_engine == "pyttsx3 Engine":
-		audio_file_name = pyttsx3(text, uploaded_file.name)
-	if audio_engine == "Google gTTs Engine":
-		audio_file_name = text_to_speech(text, uploaded_file.name)
+	audio_file_name = text_to_speech(text, uploaded_file.name)
 
 	audio_file = open(audio_file_name, 'rb')
 	audio_bytes = audio_file.read()
