@@ -1,5 +1,4 @@
 from PyPDF2 import PdfFileReader
-from pdfminer.high_level import extract_text
 import pyttsx3
 import os
 from gtts import gTTS
@@ -32,11 +31,6 @@ def pypdf2(py_pdf_file):
 	# join all pages text into single string variable
 	text_temp = " ".join(text_lst)
 	return text + text_temp
-
-def pdfminer(pdf_file):
-	# extract text from pdf
-	text = extract_text(pdf_file)
-	return text
 
 def pyttsx3(text, file_name, gender=1):
 	audio_file = f'{file_name}.mp3'
