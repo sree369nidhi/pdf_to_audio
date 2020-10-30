@@ -1,5 +1,4 @@
 PyPDF2
-pdfmerge
 python-espeak
 pyttsx3
 gtts
