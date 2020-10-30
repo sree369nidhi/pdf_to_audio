@@ -1,4 +1,4 @@
-PyPDF2
+python-pypdf2
 python-espeak
 pyttsx3
 gtts
